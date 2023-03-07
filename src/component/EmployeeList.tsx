@@ -3,11 +3,15 @@ import './EmployeeList.style.css'
 
 
 type Props={
-    list:IEmployee[]
+    list:IEmployee[],
+    onDeleteClick:(data:IEmployee) =>void;
 }
 const EmpolyeeList =(props:Props) =>{
-    const {list} = props;
+    const {list, onDeleteClick} = props;
     return <div>
+        <article className="list-header">
+            <h3>Employee List</h3>
+        </article>
         <table>
   <tr>
     <th>Name</th>
@@ -22,7 +26,7 @@ const EmpolyeeList =(props:Props) =>{
     <td><div>
         <input type='button' value='View'/>
         <input type='button' value='Edit'/>
-        <input type='button' value='Delete'/>
+        <input type='button' value='Delete' onClick={()=>onDeleteClick(employee)}/>
         </div></td>
   </tr>
   })}

@@ -15,6 +15,12 @@ const shownListPage=()=>{
 const addEmployee=(data:IEmployee)=>{
     setEmployeeList([...empolyeeList, data]);
 }
+const deleteEmployee=(data:IEmployee)=>{
+    const indexofDelete=empolyeeList.indexOf(data);
+    const tempList=[...empolyeeList]
+    tempList.splice(indexofDelete,1);
+    setEmployeeList(tempList);
+}
     return <div>
         <article className='article-header'>
             <header >
@@ -23,8 +29,8 @@ const addEmployee=(data:IEmployee)=>{
         </article>
         <section className='section-content'>
             {shownPage===PageEnum.list&&(<div>
-            <input type='button' value='Add Employee' onClick={onAddEmployeeclickHnd}/>
-                <EmpolyeeList list={empolyeeList}/></div>)}
+            <input type='button' value='Add Employee' onClick={onAddEmployeeclickHnd} className='add-employee-btn'/>
+                <EmpolyeeList list={empolyeeList} onDeleteClick={deleteEmployee}/></div>)}
                 {shownPage===PageEnum.add&& <AddEmployee onBackButtonClickHnd={shownListPage} onSubmitClick={addEmployee}/>}
             
         </section>

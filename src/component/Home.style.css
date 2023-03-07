@@ -1,5 +1,8 @@
+body {
+  background-color: rgb(196, 137, 183);
+}
 .article-header {
-  background-color: darkgreen;
+  background-color: rgb(162, 16, 89);
   color: white;
   border: 3px solid transparent;
   text-align: center;
@@ -8,4 +11,8 @@
   margin-right: 10%;
   margin-left: 10%;
   margin-top: 20px;
+}
+.add-employee-btn {
+  float: right;
+  margin-bottom: 5px;
 }

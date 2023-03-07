@@ -1,5 +1,6 @@
 .form-container {
   text-align: center;
+  color: white;
 }
 input[type='text'] {
   height: 20px;
@@ -10,4 +11,8 @@ input[type='button'],
 input[type='submit'] {
   height: 25px;
   margin-left: 5px;
+  background-color: aliceblue;
+  border: none;
+  color: rgb(99, 5, 36);
+  cursor: pointer;
 }

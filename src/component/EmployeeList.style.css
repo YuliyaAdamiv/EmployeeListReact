@@ -2,6 +2,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  color: white;
 }
 
 td,
@@ -12,5 +13,9 @@ th {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: rgb(153, 20, 160);
+}
+.list-header {
+  text-align: center;
+  color: white;
 }
