@@ -1,0 +1,11 @@
+.article-header {
+  background-color: darkgreen;
+  color: white;
+  border: 3px solid transparent;
+  text-align: center;
+}
+.section-content {
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 20px;
+}
