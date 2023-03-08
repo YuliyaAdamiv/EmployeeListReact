@@ -1,5 +1,7 @@
 import { IEmployee } from './Employee.type';
 import './EmployeeList.style.css'
+import EmployeeModal from './EmployeeModal';
+import { useState } from 'react';
 
 
 type Props={
@@ -8,6 +10,14 @@ type Props={
 }
 const EmpolyeeList =(props:Props) =>{
     const {list, onDeleteClick} = props;
+    const [shownModal, setShownModal]=useState(false);
+    const [dataToShow, setDataToShow] =useState(null as IEmployee|null)
+    const viewEmployee = (data:IEmployee)=>{
+        setDataToShow(data)
+        setShownModal(true);
+    }
+    const onCloseModal=()=>setShownModal(false);
+   
     return <div>
         <article className="list-header">
             <h3>Employee List</h3>
@@ -24,7 +34,7 @@ const EmpolyeeList =(props:Props) =>{
     <td>{`${employee.firstName} ${employee.lastName}`}</td>
     <td>{employee.email}</td>
     <td><div>
-        <input type='button' value='View'/>
+        <input type='button' value='View' onClick={()=>viewEmployee(employee)}/>
         <input type='button' value='Edit'/>
         <input type='button' value='Delete' onClick={()=>onDeleteClick(employee)}/>
         </div></td>
@@ -33,6 +43,7 @@ const EmpolyeeList =(props:Props) =>{
  
   
 </table>
+{ shownModal && dataToShow !== null && (<EmployeeModal onClose={onCloseModal} data={dataToShow}/>)}
 
     </div>;
 }
