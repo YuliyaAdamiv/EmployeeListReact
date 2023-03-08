@@ -7,9 +7,10 @@ import { useState } from 'react';
 type Props={
     list:IEmployee[],
     onDeleteClick:(data:IEmployee) =>void;
+    onEdit: (data:IEmployee) =>void;
 }
 const EmpolyeeList =(props:Props) =>{
-    const {list, onDeleteClick} = props;
+    const {list, onDeleteClick, onEdit} = props;
     const [shownModal, setShownModal]=useState(false);
     const [dataToShow, setDataToShow] =useState(null as IEmployee|null)
     const viewEmployee = (data:IEmployee)=>{
@@ -35,7 +36,7 @@ const EmpolyeeList =(props:Props) =>{
     <td>{employee.email}</td>
     <td><div>
         <input type='button' value='View' onClick={()=>viewEmployee(employee)}/>
-        <input type='button' value='Edit'/>
+        <input type='button' value='Edit' onClick={()=>onEdit(employee)}/>
         <input type='button' value='Delete' onClick={()=>onDeleteClick(employee)}/>
         </div></td>
   </tr>

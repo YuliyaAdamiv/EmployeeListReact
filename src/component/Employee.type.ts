@@ -12,5 +12,6 @@ export const dummyEmpolyeeList :IEmployee[]=[{
 }]
 export enum PageEnum{
     list,
-    add
+    add,
+    edit
 }
