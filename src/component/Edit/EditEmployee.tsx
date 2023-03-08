@@ -1,6 +1,6 @@
-import { IEmployee } from "./Employee.type";
+import { IEmployee } from "../Types/Employee.type";
 import { useState } from 'react'
-import './EmployeeForm.style.css'
+import './../Form/EmployeeForm.style.css'
 
 type Props={
     data:IEmployee,

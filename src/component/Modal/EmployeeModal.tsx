@@ -1,5 +1,5 @@
 import './EmployeeModal.style.css'
-import { IEmployee } from './Employee.type';
+import { IEmployee } from '../Types/Employee.type';
 
 type Props={
     onClose:()=>void;

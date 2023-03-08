@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { IEmployee } from './Employee.type';
-import './EmployeeForm.style.css'
+import { IEmployee } from '../Types/Employee.type';
+import '../Form/EmployeeForm.style.css'
 type Props={
 onBackButtonClickHnd: ()=>void;
 onSubmitClick:(data:IEmployee)=>void;

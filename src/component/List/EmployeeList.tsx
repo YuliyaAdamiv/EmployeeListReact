@@ -1,6 +1,6 @@
-import { IEmployee } from './Employee.type';
+import { IEmployee } from '../Types/Employee.type';
 import './EmployeeList.style.css'
-import EmployeeModal from './EmployeeModal';
+import EmployeeModal from '../Modal/EmployeeModal';
 import { useState } from 'react';
 
 
@@ -24,6 +24,9 @@ const EmpolyeeList =(props:Props) =>{
             <h3>Employee List</h3>
         </article>
         <table>
+        <thead>
+    </thead>
+    <tbody>
   <tr>
     <th>Name</th>
     <th>Email</th>
@@ -42,7 +45,7 @@ const EmpolyeeList =(props:Props) =>{
   </tr>
   })}
  
-  
+ </tbody>
 </table>
 { shownModal && dataToShow !== null && (<EmployeeModal onClose={onCloseModal} data={dataToShow}/>)}
 
